@@ -1,0 +1,657 @@
+/* DESKTOP */
+
+@media (min-width: 1200px) {
+  .navbar-toggler {
+    display: none !important;
+  }
+}
+
+@media all and (max-width: 1200px) and (min-width: 1151px) {
+  .navbar-toggler {
+    display: none !important;
+  }
+
+  #main #welcome-jumbotron .container #title {
+    font-size: 60px;
+    width: 100%;
+  }
+
+  #main #welcome-jumbotron .container #wrap-btn .explore {
+    width: 25%;
+  }
+
+  #main #welcome-jumbotron .container #image-illustration {
+    width: 45%;
+    position: relative;
+    left: 60%;
+    top: 15%;
+  }
+
+  #main #introduce #wrap-text #title {
+    font-size: 50px;
+    width: 95%;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools .col-tools {
+    width: 50%;
+  }
+}
+
+@media all and (max-width: 1150px) and (min-width: 900px) {
+  #main #welcome-jumbotron .container #title {
+    font-size: 60px;
+    width: 100%;
+  }
+
+  #main #welcome-jumbotron .container #wrap-btn .explore {
+    width: 25%;
+  }
+
+  #main #welcome-jumbotron .container #image-illustration {
+    width: 40%;
+    position: relative;
+    left: 55%;
+    top: 18%;
+  }
+
+  #main #introduce #wrap-text #title {
+    font-size: 50px;
+    width: 95%;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools .col-tools {
+    width: 50%;
+  }
+  #desktop {
+    display: none;
+  }
+}
+
+@media all and (max-width: 991px) and (min-width: 900px) {
+  #desktop {
+    display: none;
+  }
+
+  #main #welcome-jumbotron .container #wrap-btn .explore {
+    width: 30%;
+  }
+
+  #main #introduce {
+    height: auto;
+    flex-direction: column;
+  }
+
+  #main #introduce #wrap-text #title {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  #main #introduce #wrap-illustrations img {
+    width: 70%;
+  }
+
+  #main #introduce #wrap-text #paragraph {
+    width: 65%;
+    font-size: 30px;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools .col-tools {
+    width: 65%;
+  }
+}
+
+@media all and (max-width: 900px) and (min-width: 800px) {
+  #main #welcome-jumbotron .container #title {
+    font-size: 55px;
+    width: 95%;
+  }
+
+  #main #welcome-jumbotron .container #wrap-btn .explore {
+    width: 30%;
+  }
+
+  #main #welcome-jumbotron .container #image-illustration {
+    width: 45%;
+    position: relative;
+    left: 55%;
+    top: 15%;
+  }
+
+  #main #introduce {
+    height: auto;
+    flex-direction: column;
+  }
+
+  #main #introduce #wrap-text #title {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  #main #introduce #wrap-illustrations img {
+    width: 70%;
+  }
+
+  #main #introduce #wrap-text #paragraph {
+    width: 65%;
+    font-size: 30px;
+  }
+
+  #main #toolsjumbotron {
+    height: auto;
+  }
+
+  #main #toolsjumbotron .container #quotes {
+    font-size: 15px;
+  }
+
+  #main #toolsjumbotron .container #title {
+    font-size: 50px;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools {
+    float: none;
+    width: 100%;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(1),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(2),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(3),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(4),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(5),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(6),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(7),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(8),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(9),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(10) {
+    justify-content: center;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(2) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(4) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(6) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(8) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(10) img {
+    order: 0;
+    margin-left: 0px;
+    margin-right: 5px;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(9) {
+    margin-bottom: 5px;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools .col-tools:hover {
+    transform: translateZ(-10px) !important;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools .col-tools {
+    margin: 0px !important;
+    width: 35%;
+  }
+  #desktop {
+    display: none;
+  }
+  #footer #social-media-wrapper {
+    left: 60%;
+  }
+}
+
+@media all and (max-width: 800px) and (min-width: 740px) {
+  #desktop {
+    display: none;
+  }
+
+  #main #welcome-jumbotron .container #title {
+    font-size: 55px;
+    width: 95%;
+  }
+
+  #main #welcome-jumbotron .container #wrap-btn .explore {
+    width: 30%;
+  }
+
+  #main #welcome-jumbotron .container #image-illustration {
+    width: 45%;
+    position: relative;
+    left: 50%;
+    top: 15%;
+  }
+
+  #main #introduce {
+    height: auto;
+    flex-direction: column;
+  }
+
+  #main #introduce #wrap-text #title {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  #main #introduce #wrap-illustrations img {
+    width: 80%;
+  }
+
+  #main #introduce #wrap-text #paragraph {
+    width: 65%;
+    font-size: 30px;
+  }
+
+  #main #toolsjumbotron {
+    height: auto;
+  }
+
+  #main #toolsjumbotron .container #quotes {
+    font-size: 15px;
+  }
+
+  #main #toolsjumbotron .container #title {
+    font-size: 50px;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools {
+    float: none;
+    width: 100%;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(1),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(2),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(3),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(4),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(5),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(6),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(7),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(8),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(9),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(10) {
+    justify-content: center;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(2) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(4) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(6) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(8) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(10) img {
+    order: 0;
+    margin-left: 0px;
+    margin-right: 5px;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(9) {
+    margin-bottom: 5px;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools .col-tools:hover {
+    transform: translateZ(-10px) !important;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools .col-tools {
+    margin: 0px !important;
+    width: 35%;
+  }
+
+  #footer #social-media-wrapper {
+    left: 60%;
+  }
+}
+
+@media all and (max-width: 767px) and (min-width: 741px) {
+  #main #welcome-jumbotron .container #title {
+    font-size: 55px;
+    width: 100%;
+  }
+
+  #main #welcome-jumbotron .container #wrap-btn .explore {
+    width: 30%;
+  }
+
+  #main #welcome-jumbotron .container #wrap-btn .explore {
+    width: 45%;
+  }
+
+  #main #welcome-jumbotron .container #image-illustration {
+    width: 53%;
+    position: relative;
+    left: 50%;
+    top: 18%;
+  }
+
+  #main #introduce {
+    height: auto;
+    flex-direction: column;
+  }
+
+  #main #introduce #wrap-text #title {
+    font-size: 50px;
+  }
+
+  #main #introduce #wrap-text #paragraph {
+    width: 93%;
+    font-size: 28px;
+  }
+
+  #main #introduce #wrap-illustrations img {
+    width: 90%;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools .col-tools {
+    margin: 0px !important;
+    width: 45%;
+  }
+  #footer #social-media-wrapper {
+    left: 55%;
+  }
+}
+
+@media all and (max-width: 740px) and (min-width: 540px) {
+  #desktop {
+    display: none;
+  }
+
+  #main #welcome-jumbotron .container #title {
+    font-size: 55px;
+    width: 100%;
+  }
+
+  #main #welcome-jumbotron .container #wrap-btn .explore {
+    width: 45%;
+  }
+
+  #main #welcome-jumbotron .container #image-illustration {
+    width: 53%;
+    position: relative;
+    left: 50%;
+    top: 18%;
+  }
+
+  #main #introduce {
+    height: auto;
+    flex-direction: column;
+  }
+
+  #main #introduce #wrap-text #title {
+    font-size: 45px;
+    text-align: center;
+  }
+
+  #main #introduce #wrap-text #paragraph {
+    width: 85%;
+    font-size: 28px;
+  }
+
+  #main #introduce #wrap-illustrations img {
+    width: 90%;
+  }
+
+  #main #toolsjumbotron {
+    height: auto;
+  }
+
+  #main #toolsjumbotron .container #quotes {
+    font-size: 15px;
+  }
+
+  #main #toolsjumbotron .container #title {
+    font-size: 50px;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools {
+    float: none;
+    width: 100%;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(1),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(2),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(3),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(4),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(5),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(6),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(7),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(8),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(9),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(10) {
+    justify-content: center;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(2) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(4) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(6) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(8) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(10) img {
+    order: 0;
+    margin-left: 0px;
+    margin-right: 5px;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(9) {
+    margin-bottom: 5px;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools .col-tools:hover {
+    transform: translateZ(-10px) !important;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools .col-tools {
+    margin: 0px !important;
+  }
+  #footer #social-media-wrapper {
+    left: 45%;
+  }
+}
+
+/* MOBILE */
+
+@media all and (max-width: 540px) and (min-width: 500px) {
+  #desktop {
+    display: none;
+  }
+
+  .nav-logo {
+    left: 3%;
+  }
+
+  #main #welcome-jumbotron .container #title {
+    font-size: 45px;
+    width: 90%;
+  }
+
+  #main #welcome-jumbotron .container #wrap-btn .explore {
+    width: 45%;
+  }
+
+  #main #welcome-jumbotron .container #image-illustration {
+    width: 50%;
+    position: relative;
+    left: 50%;
+    top: 25%;
+  }
+
+  #main #introduce {
+    height: auto;
+    flex-direction: column;
+  }
+
+  #main #introduce #wrap-text #title {
+    font-size: 45px;
+    text-align: center;
+  }
+
+  #main #introduce #wrap-text #paragraph {
+    width: 90%;
+    font-size: 28px;
+  }
+
+  #main #introduce #wrap-illustrations img {
+    width: 80%;
+  }
+
+  #main #toolsjumbotron {
+    height: auto;
+  }
+
+  #main #toolsjumbotron .container #quotes {
+    font-size: 14px;
+  }
+
+  #main #toolsjumbotron .container #title {
+    font-size: 45px;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools {
+    float: none;
+    width: 100%;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(1),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(2),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(3),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(4),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(5),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(6),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(7),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(8),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(9),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(10) {
+    justify-content: center;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(2) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(4) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(6) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(8) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(10) img {
+    order: 0;
+    margin-left: 0px;
+    margin-right: 5px;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(9) {
+    margin-bottom: 5px;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools .col-tools:hover {
+    transform: translateZ(-10px) !important;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools .col-tools {
+    margin: 0px !important;
+  }
+
+  #footer #social-media-wrapper {
+    left: 30%;
+  }
+}
+
+@media all and (max-width: 500px) and (min-width: 200px) {
+  #desktop {
+    display: none;
+  }
+
+  .nav-logo {
+    left: 3%;
+  }
+
+  #main #welcome-jumbotron .container #title {
+    font-size: 45px;
+    width: 90%;
+  }
+
+  #main #welcome-jumbotron .container #wrap-btn .explore {
+    width: 54%;
+  }
+
+  #main #welcome-jumbotron .container #image-illustration {
+    width: 50%;
+    position: relative;
+    left: 50%;
+    top: 25%;
+  }
+
+  #main #introduce {
+    height: auto;
+    flex-direction: column;
+  }
+
+  #main #introduce #wrap-text #title {
+    font-size: 40px;
+  }
+
+  #main #introduce #wrap-text #paragraph {
+    width: 90%;
+    font-size: 26px;
+    padding: 0px;
+  }
+
+  #main #introduce #wrap-illustrations img {
+    width: 80%;
+  }
+
+  #main #toolsjumbotron {
+    height: auto;
+  }
+
+  #main #toolsjumbotron .container #quotes {
+    font-size: 14px;
+  }
+
+  #main #toolsjumbotron .container #title {
+    font-size: 45px;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools {
+    float: none;
+    width: 100%;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(1),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(2),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(3),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(4),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(5),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(6),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(7),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(8),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(9),
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(10) {
+    justify-content: center;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(2) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(4) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(6) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(8) img,
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(10) img {
+    order: 0;
+    margin-left: 0px;
+    margin-right: 5px;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools:nth-child(9) {
+    margin-bottom: 5px;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools .col-tools:hover {
+    transform: translateZ(-10px) !important;
+  }
+
+  #main #toolsjumbotron .container .frame-logo .table .tools .col-tools {
+    margin: 0px !important;
+    width: 55%;
+  }
+
+  #main #subscribe .container #title p {
+    left: 12%;
+  }
+
+  #main #subscribe .container #wrap-input #subscribe-text {
+    left: 12%;
+    width: 46%;
+  }
+
+  #main #subscribe .container #wrap-input .btn-submit {
+    left: 17%;
+    padding: 4px 24px;
+  }
+  #footer #social-media-wrapper {
+    left: 25%;
+  }
+}

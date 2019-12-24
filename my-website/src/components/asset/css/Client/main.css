@@ -1,0 +1,23 @@
+#main {
+  position: relative;
+  overflow-x: hidden;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.hide {
+  display: none;
+  transform: translateY(-100%) !important;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0s linear 0.3s,
+    -webkit-transform 0s linear 0.3s !important;
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

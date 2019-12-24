@@ -1,0 +1,319 @@
+.user-wrapper {
+  background: #db4437;
+}
+
+.user-wrapper .container {
+  flex-direction: column;
+}
+
+.user-wrapper .container .nav-logo {
+  position: absolute;
+  left: 10%;
+  top: 5%;
+}
+
+.user-wrapper #background-shapes {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+}
+
+.user-wrapper .container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-wrapper .container .form {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: 40%;
+  height: auto;
+  padding: 50px 50px;
+  align-items: center;
+  background: rgba(255, 255, 255, 1);
+  min-width: 375px;
+}
+
+.user-wrapper .container .form #title {
+  margin-bottom: 15px;
+}
+
+.user-wrapper .container .form #title h5 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.user-wrapper .container .form #input-area {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-wrapper .container .form #input-area .wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  margin-bottom: 20px;
+}
+
+.user-wrapper .container .form #input-area .wrapper .input {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 10px 25px;
+  width: 100%;
+  height: 50px;
+}
+
+.user-wrapper .container .form #input-area .wrapper .input:focus {
+  outline: none;
+}
+
+.user-wrapper .container .form #input-area .wrapper label {
+  position: absolute;
+  transition: all 0.1s ease;
+  left: 8%;
+  top: 25%;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+.user-wrapper .container #login-form #input-area #password-wrapper {
+  margin: 0px;
+}
+
+.user-wrapper .container .form #input-area .remember-forget {
+  font-size: 15px;
+  color: black;
+  margin: 0px;
+}
+
+.user-wrapper .container .form #input-area .remember-forget #forget-password {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.user-wrapper
+  .container
+  .form
+  #input-area
+  .remember-forget
+  #forget-password
+  div {
+  color: rgb(6, 69, 173);
+  margin-top: 3px;
+}
+
+.user-wrapper
+  .container
+  .form
+  #input-area
+  .remember-forget
+  #forget-password
+  div:hover {
+  cursor: pointer;
+  pointer-events: all;
+  text-decoration: underline;
+}
+
+.user-wrapper .container .form #input-area .wrapper #remember-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.user-wrapper .container .form #input-area .wrapper #remember-wrapper h5 {
+  font-weight: 300;
+  font-size: 15px;
+  margin: 0px;
+  margin-left: 5px;
+}
+
+.user-wrapper .container .form #input-area #signin-btn {
+  width: 100%;
+}
+
+.user-wrapper .container .form #input-area #signin-btn a {
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-wrapper .container .form #input-area #signin-btn a img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.user-wrapper .container .form #input-area #signin-btn #google {
+  margin-bottom: 20px;
+}
+
+.user-wrapper .container .form #input-area #signin-btn #facebook {
+  background-color: #3b5998;
+  color: white;
+}
+
+.user-wrapper .container .form #input-area #signin-btn #facebook:hover {
+  background-color: #355088;
+}
+
+.user-wrapper .container .form #input-area #signin-btn hr {
+  background: radial-gradient(rgba(102, 102, 102, 0.3));
+  height: 1px;
+  width: 100%;
+}
+
+.user-wrapper .container .form #input-area #register-wrapper,
+.user-wrapper .container .form #input-area #login-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 10px 0px 0px 0px;
+}
+
+.user-wrapper .container .form #input-area .wrapper .registertext {
+  color: black;
+  font-weight: 300;
+  font-size: 15px;
+  margin-bottom: 0px;
+}
+
+.user-wrapper .container .form #input-area .wrapper .registertext span {
+  color: rgb(6, 69, 173);
+  cursor: pointer;
+  margin: 0px;
+  width: auto;
+}
+
+.user-wrapper .container .form #input-area .wrapper .registertext span:hover {
+  text-decoration: underline;
+  pointer-events: all;
+}
+
+.user-wrapper .container .form #input-area #register-wrapper,
+.user-wrapper .container .form #input-area #login-wrapper {
+  margin-bottom: 0px;
+}
+
+.user-wrapper .container .form #input-area #date-wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 10px 25px 10px 25px;
+}
+
+.user-wrapper
+  .container
+  .form
+  #input-area
+  .MuiFormControl-root
+  .MuiInputBase-root
+  input {
+  font-family: "Rubik";
+}
+
+.user-wrapper .container .form #input-area .MuiFormControl-root {
+  width: 100%;
+}
+
+.user-wrapper .container .form #input-area .MuiFormControl-marginNormal {
+  margin: 0px;
+}
+
+.user-wrapper
+  .container
+  .form
+  #input-area
+  .MuiFormControl-root
+  .MuiInput-underline:before {
+  border-bottom: none;
+  pointer-events: none;
+  transition: none;
+  content: none;
+}
+
+.user-wrapper
+  .container
+  .form
+  #input-area
+  .MuiFormControl-root
+  .MuiInput-underline
+  #date-picker-dialog {
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.user-wrapper .container .form #input-area #phone-wrapper {
+  color: black;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 10px 25px 10px 25px;
+}
+
+.user-wrapper
+  .container
+  .form
+  #input-area
+  #phone-wrapper
+  .react-tel-input
+  .form-control {
+  border: none;
+}
+
+.react-tel-input .flag-dropdown {
+  outline: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.react-phone-number-input__icon {
+  width: 20px;
+  height: auto;
+  border: none;
+  box-sizing: content-box;
+}
+
+.react-phone-number-input__icon-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+}
+
+.react-phone-number-input__input {
+  border-bottom: none;
+}
+
+[type="tel"].form-control {
+  width: 100%;
+  font-family: "Rubik";
+  font-size: 15px;
+  font-weight: 400;
+}
+
+[type="tel"].form-control:focus {
+  box-shadow: inset 0 0px 0 #ddd;
+}

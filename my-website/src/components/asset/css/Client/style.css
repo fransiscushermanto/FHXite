@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "Visionbold";
+  src: url("../../WEBFONT/woff2/vision-bold-webfont.woff2");
+}
+@font-face {
+  font-family: "Visionthin";
+  src: url("../../WEBFONT/woff2/vision-thin-webfont.woff2");
+}
+@font-face {
+  font-family: "Visionregular";
+  src: url("../../WEBFONT/woff2/vision-webfont.woff2");
+}
+@font-face {
+  font-family: "Visionlight";
+  src: url("../../WEBFONT/woff2/vision-light-webfont.woff2");
+}
+@font-face {
+  font-family: "Visionblack";
+  src: url("../../WEBFONT/woff/vision-black-webfont.woff");
+}
+@font-face {
+  font-family: "Visionheavy";
+  src: url("../../WEBFONT/woff/vision-heavy-webfont.woff");
+}
+@font-face {
+  font-family: "OpenSans-ExtraBold";
+  src: url("../../WEBFONT/Open_Sans/OpenSans-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url("../../WEBFONT/Open_Sans/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url("../../WEBFONT/Open_Sans/OpenSans-Bold.ttf");
+}
+@font-face {
+  font-family: "ostrich-inline";
+  src: url("../../WEBFONT/ostrich-sans-master/webfonts/ostrich-sans-inline-regular.woff");
+}
+@font-face {
+  font-family: "ostrich-black";
+  src: url("../../WEBFONT/ostrich-sans-master/webfonts/ostrich-sans-black.woff");
+}
+@font-face {
+  font-family: "ostrich-bold";
+  src: url("../../WEBFONT/ostrich-sans-master/webfonts/ostrich-sans-bold.ttf");
+}
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: "Rubik";
+}
+
+a:focus {
+  outline: none;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.header {
+  position: relative;
+  top: 5%;
+}
+
+::-webkit-scrollbar {
+  width: 0.5%;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 1s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.9);
+}

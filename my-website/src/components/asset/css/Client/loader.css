@@ -1,0 +1,89 @@
+#loader {
+  transition: all 0.5s ease;
+  position: absolute;
+  background: rgb(34, 214, 190);
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
+}
+
+#loader svg {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#loader svg path {
+  width: 10% !important;
+}
+
+#loader svg #Text path:nth-child(1) {
+  stroke-dasharray: 400.19;
+  stroke-dashoffset: 400.19;
+  animation: black-line-anim 3s infinite ease alternate-reverse;
+}
+
+#loader svg #Text path:nth-child(2) {
+  stroke-dasharray: 497.2;
+  stroke-dashoffset: 497.2;
+  animation: blue-line-anim 3s infinite ease alternate-reverse 0.3s;
+}
+
+#loader #progressBarField {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+}
+
+#loader #progressBarField #progressBar {
+  border-top: 2px solid white;
+  height: 100%;
+}
+
+#loader.hidden {
+  opacity: 0;
+  z-index: 0;
+  transition: all 0.5s ease;
+  height: 0vh;
+}
+
+@keyframes black-line-anim {
+  0% {
+    fill: transparent;
+  }
+  100% {
+    fill: black;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes blue-line-anim {
+  0% {
+    fill: transparent;
+  }
+  100% {
+    fill: #056ff0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes white-line-anim {
+  0% {
+    fill: transparent;
+  }
+  100% {
+    fill: white;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes black-fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: black;
+  }
+}

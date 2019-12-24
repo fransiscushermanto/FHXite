@@ -1,0 +1,24 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  color: white;
+}
+
+.control-wrapper {
+  display: flex;
+  width: 75%;
+  padding: 24px 24px;
+}
+
+.middle {
+  text-align: center !important;
+}
+
+.left {
+  text-align: left !important;
+}
+
+.right {
+  text-align: right !important;
+}
