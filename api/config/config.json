@@ -1,25 +1,25 @@
 {
   "development": {
-    "username": "be7dc52dbd4266",
-    "password": "96340d82",
-    "database": "heroku_0a8a67ec8fe2667",
-    "host": "us-cdbr-iron-east-05.cleardb.net",
+    "username": "root",
+    "password": null,
+    "database": "my_database",
+    "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
   },
   "test": {
-    "username": "be7dc52dbd4266",
-    "password": "96340d82",
-    "database": "heroku_0a8a67ec8fe2667",
-    "host": "us-cdbr-iron-east-05.cleardb.net",
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
   },
   "production": {
-    "username": "be7dc52dbd4266",
-    "password": "96340d82",
-    "database": "heroku_0a8a67ec8fe2667",
-    "host": "us-cdbr-iron-east-05.cleardb.net",
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
   }

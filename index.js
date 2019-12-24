@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const port = process.env.port || 8000;
+const port = process.env.PORT || 8000;
 const path = require("path");
 const favicon = require("express-favicon");
 const cors = require("cors");
@@ -34,8 +34,9 @@ app.use(express.static(path.join(__dirname, "build")));
 app.get("/ping", function(req, res) {
   return res.send("pong");
 });
-app.get("/*", function(req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+app.get("*", function(req, res) {
+  const index = path.join(__dirname, "build", "index.html");
+  res.sendFile(index);
 });
 
 io.on("connection", function(socket) {
@@ -48,7 +49,7 @@ io.on("connection", function(socket) {
   });
 });
 
-http.listen(port, () => {
+http.listen(port, "0.0.0.0", () => {
   console.log(`Products server listening on port ${port}`);
 });
 

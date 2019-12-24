@@ -78,7 +78,7 @@ const App = () => {
   return (
     <React.Fragment>
       <Loader widths={width}></Loader>
-      <Router forceRefresh={true}>
+      <Router forceRefresh={false}>
         <Switch>
           <Route exact path="/">
             <Main
