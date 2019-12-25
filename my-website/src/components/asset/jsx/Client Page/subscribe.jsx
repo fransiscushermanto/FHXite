@@ -5,7 +5,6 @@ import io from "socket.io-client";
 class Subscribe extends Component {
   constructor() {
     super();
-    console.log("constructor");
     const socketUrl = `${process.env.REACT_APP_SOCKET_URL ||
       window.location.origin}`;
     this.socket = io.connect(socketUrl);
@@ -17,19 +16,12 @@ class Subscribe extends Component {
     }
   };
 
-  async componentDidMount() {
-    // this.getEmail();
-    console.log("hi");
-  }
-
   addUser = async e => {
     e.preventDefault();
     const username = this.state.addUser.email;
-    console.log("1");
     try {
       // selalu try catch trus console log errornya supaya bisa tau error dimanapush lagi?iya
       const response = await instance.post("users/subs", { username });
-      console.log("2", response);
       this.socket.emit("ADD_SUBS");
       if (response.status === 200) {
         document.getElementById("subscribe-text").value = "";
