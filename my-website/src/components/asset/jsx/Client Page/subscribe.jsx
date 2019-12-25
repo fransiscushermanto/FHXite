@@ -6,7 +6,9 @@ class Subscribe extends Component {
   constructor() {
     super();
     console.log("constructor");
-    this.socket = io("localhost:8000");
+    const socketUrl = `${process.env.REACT_APP_SOCKET_URL ||
+      window.location.origin}`;
+    this.socket = io.connect(socketUrl);
   }
 
   state = {

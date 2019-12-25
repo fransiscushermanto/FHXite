@@ -25,7 +25,9 @@ const Admin = ({ widths }) => {
   let { url } = useRouteMatch();
   const socketRef = React.useRef();
   useEffect(() => {
-    socketRef.current = io("localhost:8000"); // ok berarti pindahin ke subscribe ya
+    const socketUrl = `${process.env.REACT_APP_SOCKET_URL ||
+      window.location.origin}`;
+    socketRef.current = io.connect(socketUrl);
   }, []);
 
   const socket = socketRef.current;
