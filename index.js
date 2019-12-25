@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use("/users", subscribe_routers);
 app.use("/insert", tes);
 app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(path.resolve(__dirname, "my-website", "build", "index.html"));
 });
 app.use(favicon(__dirname + "/build/favicon.ico"));
 // the __dirname is the current directory from where the script is running
