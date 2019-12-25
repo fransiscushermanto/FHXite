@@ -35,7 +35,7 @@ app.get("/ping", function(req, res) {
   return res.send("pong");
 });
 app.get("*", function(req, res) {
-  const index = path.join(__dirname, "build", "index.html");
+  const index = path.join(__dirname, "my-website", "build", "index.html"); //oke2 lanjut dulu ko wkwk, ini udah sih aturan, coba deploy oke bentar
   res.sendFile(index);
 });
 
