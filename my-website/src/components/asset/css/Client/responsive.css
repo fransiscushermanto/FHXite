@@ -780,16 +780,17 @@
   }
 
   #main #subscribe .container #title p {
-    left: 12%;
+    left: 10%;
+    margin-bottom: 2px;
   }
 
   #main #subscribe .container #wrap-input #subscribe-text {
-    left: 12%;
+    left: 10%;
     width: 46%;
   }
 
   #main #subscribe .container #wrap-input .btn-submit {
-    left: 17%;
+    left: 14%;
     padding: 4px 24px;
   }
   #footer #social-media-wrapper {
@@ -797,12 +798,17 @@
   }
 
   #footer .left #footer-text .nav-logo {
-    font-size: 40px;
+    font-size: 30px;
   }
+
   #footer .left {
     position: relative;
-    left: 3%;
+    left: -9%;
     display: flex;
     align-items: center;
+  }
+
+  #footer .left #footer-text {
+    font-size: 13px;
   }
 }
