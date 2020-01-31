@@ -20,8 +20,7 @@ class Subscribe extends Component {
     e.preventDefault();
     const username = this.state.addUser.email;
     try {
-      // selalu try catch trus console log errornya supaya bisa tau error dimanapush lagi?iya
-      const response = await instance.post("users/subs", { username });
+      const response = await instance.post("/api/client/subs", { username });
       this.socket.emit("ADD_SUBS");
       if (response.status === 200) {
         document.getElementById("subscribe-text").value = "";

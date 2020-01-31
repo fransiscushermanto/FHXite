@@ -12,7 +12,7 @@ router.post("/subs", async (req, res) => {
     const sub = await Subs.create({
       email: req.body.username
     });
-    res.json(sub); //
+    res.json(sub);
   } catch (error) {
     console.error(error);
     res.status(422).json(error);

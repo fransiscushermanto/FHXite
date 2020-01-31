@@ -3,7 +3,7 @@ import Main from "./components/asset/jsx/Client Page/main";
 import Loader from "./components/asset/jsx/Client Page/loader";
 import Admin from "./components/asset/jsx/Admin Page/Admin.jsx";
 import Login from "./components/asset/jsx/Client Page/login";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const App = () => {
   const [image, setImage] = useState([

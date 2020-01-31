@@ -54,7 +54,7 @@ const Subscribe = ({ socket, handleClick }) => {
     try {
       const {
         data: { sub: user }
-      } = await instance.get("users/get");
+      } = await instance.get("/api/client/get");
       setSubs(user);
     } catch (error) {
       console.log(error);
@@ -64,9 +64,8 @@ const Subscribe = ({ socket, handleClick }) => {
   const handleDelete = async target => {
     const id = target.subs_id;
     const response = await instance
-      .post("users/delete", { id })
+      .post("/api/client/delete", { id })
       .catch(err => console.log(err));
-    console.log(response);
     if (response.status === 200) {
       handleClick("Deleted");
     }

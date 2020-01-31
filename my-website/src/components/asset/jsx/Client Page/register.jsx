@@ -3,6 +3,7 @@ import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker
 } from "../../../../../node_modules/@material-ui/pickers";
+import { Redirect, Route, useHistory } from "react-router-dom";
 import DateFnsUtils from "@date-io/date-fns";
 import PhoneInput from "react-phone-input-2";
 import {
@@ -12,6 +13,8 @@ import {
 } from "react-phone-number-input";
 import "react-phone-input-2/lib/style.css";
 import en from "react-phone-number-input/locale/en.json";
+import instance from "../../../../instance";
+import moment from "moment";
 
 const Register = ({
   widths,
@@ -19,21 +22,90 @@ const Register = ({
   changeLayout,
   displayRegister
 }) => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [phone, setPhone] = useState();
+  const monthName = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
 
-  const handleDateChange = date => {
-    setSelectedDate(date);
-  };
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [full_name, setFullname] = useState();
+  const [email, setEmail] = useState();
+  const [dates, setDate] = useState("");
+  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState();
+  const [country, setCountry] = useState();
+  const history = useHistory();
 
   useEffect(() => {
     document.getElementById("date-picker-dialog").disabled = true;
   }, []);
 
+  const register = async e => {
+    e.preventDefault();
+    const user = {
+      full_name: full_name,
+      email: email,
+      password: password,
+      birthday: dates,
+      phone_number: phone,
+      country: country
+    };
+    try {
+      const response = await instance.post("/api/user/auth/register", user);
+      console.log(response);
+      if (response.status == 200) {
+        console.log("TOUCH");
+        document.querySelector("input").value = "";
+        history.push("/login");
+        window.location.reload();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fullName = value => {
+    const name = document.getElementById(value.target.id).value;
+    setFullname(name);
+    inputTransition(value);
+  };
+
+  const emails = value => {
+    const mEmail = document.getElementById(value.target.id).value;
+    setEmail(mEmail);
+    inputTransition(value);
+  };
+
+  const passwords = value => {
+    const mPAssword = document.getElementById(value.target.id).value;
+    setPassword(mPAssword);
+    inputTransition(value);
+  };
+
+  const handleDateChange = date => {
+    setSelectedDate(date);
+    const tgl = moment(date).format("YYYY-MMMM-DD");
+    setDate(tgl);
+  };
+
   const phoneSetting = phone => {
     setPhone(phone && formatPhoneNumberIntl(phone));
     console.log(isValidPhoneNumber(phone));
+    const ele = document.getElementsByClassName("flag")[0];
+    const strClass = ele.className.split(" ");
+    setCountry(en[strClass[1].toUpperCase()]);
   };
+
   return (
     <form
       id="register-form"
@@ -42,11 +114,22 @@ const Register = ({
         zIndex: widths === 100 ? "3" : "0",
         display: displayRegister === true ? "flex" : "none"
       }}
+      onSubmit={register}
     >
       {/* <div id="title">
             <h5>SIGN IN</h5>
           </div> */}
       <div id="input-area">
+        <div id="name-wrapper" className="wrapper">
+          <label className="registerLabel">Full Name</label>
+          <input
+            type="text"
+            id="fullnameRegis"
+            className="input"
+            name="text"
+            onChange={value => fullName(value)}
+          />
+        </div>
         <div id="email-wrapper" className="wrapper">
           <label className="registerLabel">Email</label>
           <input
@@ -54,7 +137,7 @@ const Register = ({
             id="emailRegis"
             className="input"
             name="email"
-            onChange={inputTransition}
+            onChange={value => emails(value)}
           />
         </div>
         <div id="password-wrapper" className="wrapper">
@@ -64,7 +147,7 @@ const Register = ({
             id="passwordRegis"
             className="input"
             name="password"
-            onChange={inputTransition}
+            onChange={value => passwords(value)}
           />
         </div>
         <div id="date-wrapper">
@@ -92,9 +175,9 @@ const Register = ({
           />
         </div>
         <div id="signin-btn">
-          <a className="btn btn-primary" id="signin" href="/">
+          <button type="submit" className="btn btn-primary" id="signin">
             SUBMIT
-          </a>
+          </button>
         </div>
         <div className="wrapper" id="login-wrapper">
           <h5 className="registertext">
