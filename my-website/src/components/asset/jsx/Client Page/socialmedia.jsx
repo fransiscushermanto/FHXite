@@ -1,31 +1,44 @@
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
+const SocialMedia = ({ image, imageNoColor, imageColor, onHover }) => {
+  return (
+    <a
+      id={image.id}
+      className="sosmed"
+      onMouseEnter={() => onHover(image)}
+      onPointerLeave={() => onHover(image)}
+      href={image.href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src={
+          image.value === true
+            ? imageNoColor[image.key - 1].src
+            : imageColor[image.key - 1].src
+        }
+        alt=""
+        width="25px"
+        height="25px"
+      />
+    </a>
+  );
+};
 
-class SocialMedia extends Component {
-  render() {
-    return (
-      <a
-        id={this.props.image.id}
-        className="sosmed"
-        onMouseEnter={() => this.props.onHover(this.props.image)}
-        onPointerLeave={() => this.props.onHover(this.props.image)}
-        href={this.props.image.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        // onMouseLeave={() => this.props.onLeave(this.props.image)}
-      >
-        <img
-          src={
-            this.props.image.value === true
-              ? this.props.imageNoColor[this.props.image.key - 1].src
-              : this.props.imageColor[this.props.image.key - 1].src
-          }
-          alt=""
-          width="25px"
-          height="25px"
-        />
-      </a>
-    );
-  }
-}
+SocialMedia.propTypes = {
+  imageNoColor: PropTypes.arrayOf(PropTypes.shape({ src: PropTypes.string }))
+    .isRequired,
+  imageColor: PropTypes.arrayOf(PropTypes.shape({ src: PropTypes.string }))
+    .isRequired,
+  image: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.number,
+      id: PropTypes.string,
+      value: PropTypes.bool,
+      href: PropTypes.string
+    })
+  ).isRequired,
+  onHover: PropTypes.func.isRequired
+};
 
 export default SocialMedia;

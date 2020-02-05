@@ -1,27 +1,27 @@
-import React, { Component } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import instance from "../../../../instance";
 import io from "socket.io-client";
 
-class Subscribe extends Component {
-  constructor() {
-    super();
+const Subscribe = () => {
+  const [addUser, setAddUser] = useState({
+    email: ""
+  });
+
+  const socketRef = useRef();
+  useEffect(() => {
     const socketUrl = `${process.env.REACT_APP_SOCKET_URL ||
       window.location.origin}`;
-    this.socket = io.connect(socketUrl);
-  }
+    socketRef.current = io.connect(socketUrl);
+  }, []);
 
-  state = {
-    addUser: {
-      email: ""
-    }
-  };
+  const socket = socketRef.current;
 
-  addUser = async e => {
+  const addUserSubmit = async e => {
     e.preventDefault();
-    const username = this.state.addUser.email;
+    const username = addUser.email;
     try {
       const response = await instance.post("/api/client/subs", { username });
-      this.socket.emit("ADD_SUBS");
+      socket.emit("ADD_SUBS");
       if (response.status === 200) {
         document.getElementById("subscribe-text").value = "";
         alert("Sucess");
@@ -31,34 +31,28 @@ class Subscribe extends Component {
     }
   };
 
-  render() {
-    return (
-      <form id="subscribe" onSubmit={this.addUser}>
-        <div className="container">
-          <div id="title">
-            <p>Subscribe to keep updated!</p>
-          </div>
-          <div id="wrap-input">
-            <input
-              type="email"
-              id="subscribe-text"
-              placeholder="example@gmail.com"
-              required
-              value={this.state.addUser.email}
-              onChange={e =>
-                this.setState({
-                  addUser: { ...this.state.addUser, email: e.target.value }
-                })
-              }
-            />
-            <button type="submit" className="btn btn-submit">
-              SUBMIT
-            </button>
-          </div>
+  return (
+    <form id="subscribe" onSubmit={e => addUserSubmit(e)}>
+      <div className="container">
+        <div id="title">
+          <p>Subscribe to keep updated!</p>
         </div>
-      </form>
-    );
-  }
-}
+        <div id="wrap-input">
+          <input
+            type="email"
+            id="subscribe-text"
+            placeholder="example@gmail.com"
+            required
+            value={addUser.email}
+            onChange={e => setAddUser({ ...addUser, email: e.target.value })}
+          />
+          <button type="submit" className="btn btn-submit">
+            SUBMIT
+          </button>
+        </div>
+      </div>
+    </form>
+  );
+};
 
 export default Subscribe;

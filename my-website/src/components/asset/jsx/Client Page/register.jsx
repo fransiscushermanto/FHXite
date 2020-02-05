@@ -62,9 +62,7 @@ const Register = ({
     };
     try {
       const response = await instance.post("/api/user/auth/register", user);
-      console.log(response);
       if (response.status == 200) {
-        console.log("TOUCH");
         document.querySelector("input").value = "";
         history.push("/login");
         window.location.reload();

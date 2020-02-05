@@ -55,8 +55,9 @@ passport.use(
 
 passport.use(
   "login",
-  new localStrategy(localOptions, async (username, password, done) => {
+  new localStrategy(localOptions, async (req, username, password, done) => {
     try {
+      console.log("TOUCH PASSPORT");
       const user = await User.findAndCountAll({
         where: {
           email: username,

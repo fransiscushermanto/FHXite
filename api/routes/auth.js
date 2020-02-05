@@ -41,24 +41,22 @@ router.post("/auth/register", async (req, res, next) => {
 router.post("/auth/login", async (req, res, next) => {
   const { error } = loginValidation(req.body);
   if (error) return res.status(400).send(error.details[0].message);
-
-  passport.authenticate("login", (err, user, info) => {
+  passport.authenticate("login", async (err, user, info) => {
     if (err) {
       console.log(err);
     }
+
     if (info != undefined) {
       res.send(info.message);
     } else {
       req.logIn(user, async err => {
-        const res = await User.findAndCountAll({
-          where: {
-            email: user.username
-          }
-        });
-        console.log(res);
+        if (err) {
+          console.log(err);
+        }
+        res.status(200).json({ message: "user logged in", user });
       });
     }
-  });
+  })(req, res, next);
 });
 
 module.exports = router;

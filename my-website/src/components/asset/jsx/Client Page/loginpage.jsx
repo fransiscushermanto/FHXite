@@ -27,7 +27,6 @@ const Login = ({ displayLogin, changeLayout, inputTransition, widths }) => {
       const response = await instance.post("/api/user/auth/login", user);
       console.log(response);
       if (response.status == 200) {
-        console.log("TOUCH");
         document.querySelector("input").value = "";
       }
     } catch (error) {
