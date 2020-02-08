@@ -112,12 +112,11 @@ const Admin = ({ widths }) => {
         item[index].active = !item[index].active;
         setNavList(item);
       }
+      return data;
     });
-
     if (active[index].active === false) {
       active[index].active = !active[index].active;
     }
-
     setNavList(active);
   };
 

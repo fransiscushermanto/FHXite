@@ -6,32 +6,31 @@ import "../../css/Client/login.css";
 const Login = ({ widths }) => {
   const [displayLogin, setLogin] = useState(true);
   const [displayRegister, setRegister] = useState(false);
-
   const wrapperBackground = [
     { pathname: "/login", background: "#db4437" },
     { pathname: "/register", background: "#fcf500" }
   ];
 
   useEffect(() => {
-    LoadPage();
-  }, []);
-
-  const LoadPage = () => {
-    if (window.location.pathname == "/login") {
-      setRegister(false);
-      setLogin(true);
-    } else {
-      setRegister(true);
-      setLogin(false);
-    }
-    const wrapper = document.getElementsByClassName("user-wrapper");
-    wrapperBackground.map(bg => {
-      const { pathname, background } = bg;
-      if (window.location.pathname == pathname) {
-        wrapper[0].style.background = `${background}`;
+    const LoadPage = () => {
+      if (window.location.pathname === "/login") {
+        setRegister(false);
+        setLogin(true);
+      } else {
+        setRegister(true);
+        setLogin(false);
       }
-    });
-  };
+      const wrapper = document.getElementsByClassName("user-wrapper");
+      wrapperBackground.map(bg => {
+        const { pathname, background } = bg;
+        if (window.location.pathname === pathname) {
+          wrapper[0].style.background = `${background}`;
+        }
+        return bg;
+      });
+    };
+    LoadPage();
+  }, [wrapperBackground]);
 
   const inputTransition = e => {
     const field = [
@@ -41,16 +40,16 @@ const Login = ({ widths }) => {
       { target: "emailRegis", pos: "1", pathname: "/register" },
       { target: "passwordRegis", pos: "2", pathname: "/register" }
     ];
-    if (window.location.pathname == "/login") {
-      var c = document.getElementsByClassName("loginLabel");
+    var c;
+    if (window.location.pathname === "/login") {
+      c = document.getElementsByClassName("loginLabel");
     } else {
-      var c = document.getElementsByClassName("registerLabel");
+      c = document.getElementsByClassName("registerLabel");
     }
-    console.log(e.target.id);
     field.map(x => {
       var { target, pos, pathname } = x;
-      if (pathname == window.location.pathname) {
-        if (target == e.target.id) {
+      if (pathname === window.location.pathname) {
+        if (target === e.target.id) {
           var ele = document.getElementById(target);
           if (ele.value.length > 0) {
             c[pos].style.top = "10%";
@@ -63,12 +62,13 @@ const Login = ({ widths }) => {
           }
         }
       }
+      return x;
     });
   };
 
   const changeLayout = e => {
     e.preventDefault();
-    if (window.location.pathname == "/login") {
+    if (window.location.pathname === "/login") {
       setRegister(!displayRegister);
       setLogin(!displayLogin);
       window.history.pushState("object or string", "FHXite", "/register");
@@ -81,9 +81,10 @@ const Login = ({ widths }) => {
     const wrapper = document.getElementsByClassName("user-wrapper");
     wrapperBackground.map(bg => {
       const { pathname, background } = bg;
-      if (window.location.pathname == pathname) {
+      if (window.location.pathname === pathname) {
         wrapper[0].style.background = `${background}`;
       }
+      return bg;
     });
   };
 

@@ -8,7 +8,6 @@ import {
   TableRow,
   Paper,
   makeStyles,
-  TableFooter,
   TablePagination
 } from "@material-ui/core";
 
@@ -43,10 +42,11 @@ const Subscribe = ({ socket, handleClick }) => {
     setPage(0);
   };
 
+  socket.on("LOAD_SUBS", function(data) {
+    fetchData();
+  });
+
   useEffect(() => {
-    socket.on("LOAD_SUBS", function(data) {
-      fetchData();
-    });
     fetchData();
   }, []);
 

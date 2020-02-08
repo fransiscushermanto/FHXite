@@ -30,14 +30,12 @@ SocialMedia.propTypes = {
     .isRequired,
   imageColor: PropTypes.arrayOf(PropTypes.shape({ src: PropTypes.string }))
     .isRequired,
-  image: PropTypes.arrayOf(
-    PropTypes.shape({
-      key: PropTypes.number,
-      id: PropTypes.string,
-      value: PropTypes.bool,
-      href: PropTypes.string
-    })
-  ).isRequired,
+  image: PropTypes.shape({
+    key: PropTypes.number,
+    id: PropTypes.string,
+    value: PropTypes.bool,
+    href: PropTypes.string
+  }).isRequired,
   onHover: PropTypes.func.isRequired
 };
 

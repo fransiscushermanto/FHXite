@@ -10,7 +10,7 @@ import Footer from "./footer";
 import "../../js/animate.js";
 
 const Main = ({ widths, imageNoColor, imageColor, image, onHover }) => {
-  const [img, setImg] = useState([
+  const img = [
     {
       key: 0,
       id: "html",
@@ -51,79 +51,79 @@ const Main = ({ widths, imageNoColor, imageColor, image, onHover }) => {
       src: require("../../img/android.png"),
       text: "Android Studio"
     }
-  ]);
-  const [pos, setPos] = useState(0);
-  const [press, setPress] = useState(false);
-  const [delay, setDelay] = useState(6000);
+  ];
+  // const [pos, setPos] = useState(0);
+  // const [press, setPress] = useState(false);
+  // const [delay, setDelay] = useState(6000);
   const [offSetY, setOffSetY] = useState(0);
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
+    const handleScroll = e => {
+      // updated position
+      const temp = e.srcElement.scrollTop;
+      var visible;
+      visible = offSetY < temp;
+      if (temp === 0) {
+        setVisible(visible);
+      }
+      setOffSetY(temp);
+      setVisible(!visible);
+    };
+
     const div = document.querySelector("#main");
     div.addEventListener("scroll", handleScroll);
     window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [offSetY]);
 
   // UNSAFE_componentWillMount() {
   //   setInterval(setInterval(autoSlide, delay), 1000);
   // }
 
-  const handleScroll = e => {
-    // updated position
-    const temp = e.srcElement.scrollTop;
-    var visible;
-    visible = offSetY < temp;
-    if (temp === 0) {
-      setVisible(visible);
-    }
-    setOffSetY(temp);
-    setVisible(!visible);
-  };
+  // const autoSlide = () => {
+  //   let increment = pos + 1;
+  //   if (pos === 4) {
+  //     increment = pos - pos;
+  //   }
+  //   setPos(increment);
+  // };
 
-  const autoSlide = () => {
-    let increment = pos + 1;
-    if (pos === 4) {
-      increment = pos - pos;
-    }
-    setPos(increment);
-  };
+  // const didPress = () => {
+  //   setPress(true);
+  //   setTimeout(setPress(false), 2000);
+  // };
 
-  const didPress = () => {
-    setPress(true);
-    setTimeout(setPress(false), 2000);
-  };
+  // const resetPress = () => {
+  //   setPress(false);
+  // };
 
-  const resetPress = () => {
-    setPress(false);
-  };
+  // const toolsHandlePos = status => {
+  //   let increment = pos + 1;
+  //   let decrement = pos - 1;
+  //   if (pos === 0) {
+  //     decrement = pos + 4;
+  //   } else if (pos === 4) {
+  //     increment = pos - pos;
+  //   }
 
-  const toolsHandlePos = status => {
-    let increment = pos + 1;
-    let decrement = pos - 1;
-    if (pos === 0) {
-      decrement = pos + 4;
-    } else if (pos === 4) {
-      increment = pos - pos;
-    }
+  //   setPos(status === "add" ? increment : decrement);
+  // };
 
-    setPos(status === "add" ? increment : decrement);
-  };
+  // const toolsSlider = pos => {
+  //   const src = img[pos].src;
+  //   const id = img[pos].id;
+  //   const key = img[pos].key;
+  //   const text = img[pos].text;
 
-  const toolsSlider = pos => {
-    const src = img[pos].src;
-    const id = img[pos].id;
-    const key = img[pos].key;
-    const text = img[pos].text;
-
-    return (
-      <div id={id} className={"tools"} key={key}>
-        <img src={src} alt="" />
-        <div id="toolstext">
-          <h1 id="tools-title">{text}</h1>
-        </div>
-      </div>
-    );
-  };
+  //   return (
+  //     <div id={id} className={"tools"} key={key}>
+  //       <img src={src} alt="" />
+  //       <div id="toolstext">
+  //         <h1 id="tools-title">{text}</h1>
+  //       </div>
+  //     </div>
+  //   );
+  // };
 
   const callTools = () => {
     return img.map(image => {

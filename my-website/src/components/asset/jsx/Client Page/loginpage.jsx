@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import instance from "../../../../instance";
 const Login = ({ displayLogin, changeLayout, inputTransition, widths }) => {
   const [email, setEmail] = useState("");
@@ -6,7 +6,6 @@ const Login = ({ displayLogin, changeLayout, inputTransition, widths }) => {
 
   const emails = value => {
     const mEmail = document.getElementById(value.target.id).value;
-    console.log(mEmail);
     setEmail(mEmail);
     inputTransition(value);
   };
@@ -26,7 +25,7 @@ const Login = ({ displayLogin, changeLayout, inputTransition, widths }) => {
     try {
       const response = await instance.post("/api/user/auth/login", user);
       console.log(response);
-      if (response.status == 200) {
+      if (response.status === 200) {
         document.querySelector("input").value = "";
       }
     } catch (error) {
@@ -56,6 +55,7 @@ const Login = ({ displayLogin, changeLayout, inputTransition, widths }) => {
             id="email"
             className="input"
             name="email"
+            value={email}
             onChange={value => emails(value)}
           />
         </div>
@@ -66,6 +66,8 @@ const Login = ({ displayLogin, changeLayout, inputTransition, widths }) => {
             id="password"
             className="input"
             name="password"
+            autoComplete="on"
+            value={password}
             onChange={value => passwords(value)}
           />
         </div>

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 const Loader = ({ widths }) => {
   const getStroke = () => {
-    const logo = document.querySelectorAll("#logo #Text path");
+    document.querySelectorAll("#logo #Text path");
   };
 
   useEffect(() => {

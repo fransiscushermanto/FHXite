@@ -3,13 +3,12 @@ import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker
 } from "../../../../../node_modules/@material-ui/pickers";
-import { Redirect, Route, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import DateFnsUtils from "@date-io/date-fns";
 import PhoneInput from "react-phone-input-2";
 import {
   formatPhoneNumberIntl,
-  isValidPhoneNumber,
-  getCountries
+  isValidPhoneNumber
 } from "react-phone-number-input";
 import "react-phone-input-2/lib/style.css";
 import en from "react-phone-number-input/locale/en.json";
@@ -22,21 +21,6 @@ const Register = ({
   changeLayout,
   displayRegister
 }) => {
-  const monthName = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-  ];
-
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [full_name, setFullname] = useState();
   const [email, setEmail] = useState();
@@ -62,7 +46,7 @@ const Register = ({
     };
     try {
       const response = await instance.post("/api/user/auth/register", user);
-      if (response.status == 200) {
+      if (response.status === 200) {
         document.querySelector("input").value = "";
         history.push("/login");
         window.location.reload();
@@ -125,6 +109,7 @@ const Register = ({
             id="fullnameRegis"
             className="input"
             name="text"
+            value={full_name || ""}
             onChange={value => fullName(value)}
           />
         </div>
@@ -135,6 +120,7 @@ const Register = ({
             id="emailRegis"
             className="input"
             name="email"
+            value={email || ""}
             onChange={value => emails(value)}
           />
         </div>
@@ -145,6 +131,8 @@ const Register = ({
             id="passwordRegis"
             className="input"
             name="password"
+            autoComplete="on"
+            value={password || ""}
             onChange={value => passwords(value)}
           />
         </div>

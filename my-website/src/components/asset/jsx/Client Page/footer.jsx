@@ -10,13 +10,13 @@ const Footer = ({ onHover, imageNoColor, imageColor, image }) => {
             <span className="logo-F">F</span>H<span className="logo-X">X</span>
             ite
           </a> */}
-        <p id="footer-text">
+        <div id="footer-text">
           <div className="nav-logo">
             <span className="logo-F">F</span>H<span className="logo-X">X</span>
             ite
           </div>
           <strong>© 2019</strong>
-        </p>
+        </div>
       </div>
       <div id="social-media-wrapper">
         {image.map(social => (

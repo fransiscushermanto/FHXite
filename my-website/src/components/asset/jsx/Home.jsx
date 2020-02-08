@@ -4,7 +4,7 @@ import Main from "../jsx/Client Page/main";
 import Loader from "../jsx/Client Page/loader";
 import Admin from "../jsx/Admin Page/Admin";
 import Login from "../jsx/Client Page/login";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const Home = () => {
   const [image, setImage] = useState([
