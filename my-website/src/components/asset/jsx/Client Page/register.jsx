@@ -19,7 +19,8 @@ const Register = ({
   widths,
   inputTransition,
   changeLayout,
-  displayRegister
+  displayRegister,
+  socket
 }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [full_name, setFullname] = useState();
@@ -46,6 +47,7 @@ const Register = ({
     };
     try {
       const response = await instance.post("/api/user/auth/register", user);
+      socket.emit("ADD_USERS");
       if (response.status === 200) {
         document.querySelector("input").value = "";
         history.push("/login");

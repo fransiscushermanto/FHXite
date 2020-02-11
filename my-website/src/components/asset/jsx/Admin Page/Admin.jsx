@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
-import Subscribe from "./Subscribe";
+import User from "./User";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import io from "socket.io-client";
@@ -32,10 +32,7 @@ const Admin = ({ widths }) => {
 
   const socket = socketRef.current;
 
-  const navlistItem = [
-    { key: 1, text: "Subscribe", href: "subscribe", active: true },
-    { key: 2, text: "Add Page +", href: "addPage", active: false }
-  ];
+  const navlistItem = [{ key: 1, text: "User", href: "user", active: true }];
 
   const variantIcon = {
     success: CheckCircle,
@@ -184,10 +181,8 @@ const Admin = ({ widths }) => {
         style={{ zIndex: widths === 100 ? "3" : "0" }}
       >
         <Switch>
-          <Route path={`${url}/subscribe`}>
-            {socket && (
-              <Subscribe socket={socket} handleClick={handleClick}></Subscribe>
-            )}
+          <Route path={`${url}/user`}>
+            {socket && <User socket={socket} handleClick={handleClick}></User>}
           </Route>
         </Switch>
       </div>

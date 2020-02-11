@@ -31,11 +31,6 @@
   margin-bottom: 10px;
 }
 
-.nav-list .nav-list-item:nth-child(2) {
-  position: relative;
-  top: 85%;
-}
-
 .nav-list-item.active button,
 .nav-list-item button {
   color: black;

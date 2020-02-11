@@ -13,6 +13,24 @@ router.post("/auth/tes", async (req, res, next) => {
   res.status(200).send({ message: "welcome" });
 });
 
+router.get("/auth/get", async (req, res) => {
+  try {
+    const user = await User.findAll();
+    res.json({ user });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+router.post("/auth/delete", async (req, res) => {
+  const del = await User.destroy({
+    where: {
+      user_id: req.body.id
+    }
+  }).catch(err => console.error(err));
+  res.json(del);
+});
+
 router.post("/auth/register", async (req, res, next) => {
   const { error } = registerValidation(req.body);
   if (error) return res.status(401).send(error.details[0].message);

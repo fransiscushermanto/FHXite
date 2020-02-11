@@ -3,7 +3,7 @@ import Register from "../Client Page/register";
 import LoginPage from "../Client Page/loginpage";
 import "../../css/Client/login.css";
 
-const Login = ({ widths }) => {
+const Login = ({ widths, socket }) => {
   const [displayLogin, setLogin] = useState(true);
   const [displayRegister, setRegister] = useState(false);
   const wrapperBackground = [
@@ -103,6 +103,7 @@ const Login = ({ widths }) => {
           inputTransition={inputTransition}
           changeLayout={changeLayout}
           displayRegister={displayRegister}
+          socket={socket}
         />
       );
     }

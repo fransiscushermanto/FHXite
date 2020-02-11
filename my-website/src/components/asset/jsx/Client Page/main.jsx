@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 
 import WelcomeJumbotron from "./welcomejumbotron";
 import Introduce from "./introduce";
 import ToolsJumbotron from "./toolsjumbotron";
 import StarRating from "./starRating";
-import Subscribe from "./subscribe";
 import Footer from "./footer";
 import "../../js/animate.js";
 
@@ -52,78 +51,29 @@ const Main = ({ widths, imageNoColor, imageColor, image, onHover }) => {
       text: "Android Studio"
     }
   ];
-  // const [pos, setPos] = useState(0);
-  // const [press, setPress] = useState(false);
-  // const [delay, setDelay] = useState(6000);
-  const [offSetY, setOffSetY] = useState(0);
-  const [visible, setVisible] = useState(true);
-
+  const [visible, setVisible] = useState(false);
+  const prevScrollY = useRef(0);
   useEffect(() => {
     const handleScroll = e => {
       // updated position
-      const temp = e.srcElement.scrollTop;
-      var visible;
-      visible = offSetY < temp;
-      if (temp === 0) {
-        setVisible(visible);
+      const currentScrollY = e.srcElement.scrollTop;
+      if (prevScrollY.current < currentScrollY && visible) {
+        setVisible(false);
       }
-      setOffSetY(temp);
-      setVisible(!visible);
+      if (prevScrollY.current > currentScrollY && !visible) {
+        setVisible(true);
+      }
+      if (currentScrollY === 0) {
+        setVisible(false);
+      }
+
+      prevScrollY.current = currentScrollY;
     };
 
     const div = document.querySelector("#main");
     div.addEventListener("scroll", handleScroll);
-    window.removeEventListener("scroll", handleScroll);
-  }, [offSetY]);
-
-  // UNSAFE_componentWillMount() {
-  //   setInterval(setInterval(autoSlide, delay), 1000);
-  // }
-
-  // const autoSlide = () => {
-  //   let increment = pos + 1;
-  //   if (pos === 4) {
-  //     increment = pos - pos;
-  //   }
-  //   setPos(increment);
-  // };
-
-  // const didPress = () => {
-  //   setPress(true);
-  //   setTimeout(setPress(false), 2000);
-  // };
-
-  // const resetPress = () => {
-  //   setPress(false);
-  // };
-
-  // const toolsHandlePos = status => {
-  //   let increment = pos + 1;
-  //   let decrement = pos - 1;
-  //   if (pos === 0) {
-  //     decrement = pos + 4;
-  //   } else if (pos === 4) {
-  //     increment = pos - pos;
-  //   }
-
-  //   setPos(status === "add" ? increment : decrement);
-  // };
-
-  // const toolsSlider = pos => {
-  //   const src = img[pos].src;
-  //   const id = img[pos].id;
-  //   const key = img[pos].key;
-  //   const text = img[pos].text;
-
-  //   return (
-  //     <div id={id} className={"tools"} key={key}>
-  //       <img src={src} alt="" />
-  //       <div id="toolstext">
-  //         <h1 id="tools-title">{text}</h1>
-  //       </div>
-  //     </div>
-  //   );
-  // };
+    return () => div.removeEventListener("scroll", handleScroll);
+  }, [visible]);
 
   const callTools = () => {
     return img.map(image => {
@@ -153,7 +103,6 @@ const Main = ({ widths, imageNoColor, imageColor, image, onHover }) => {
       <WelcomeJumbotron visible={visible}></WelcomeJumbotron>
       <Introduce></Introduce>
       <ToolsJumbotron callTools={callTools}></ToolsJumbotron>
-      <Subscribe></Subscribe>
       <Footer
         imageNoColor={imageNoColor}
         imageColor={imageColor}

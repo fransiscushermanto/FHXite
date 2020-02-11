@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import io from "socket.io-client";
 
 import Main from "../jsx/Client Page/main";
 import Loader from "../jsx/Client Page/loader";
@@ -41,6 +42,15 @@ const Home = () => {
     { src: require("../img/phone-color.png") }
   ]);
   const [width, setWidth] = useState(0);
+
+  const socketRef = useRef();
+  useEffect(() => {
+    const socketUrl = `${process.env.REACT_APP_SOCKET_URL ||
+      window.location.origin}`;
+    socketRef.current = io.connect(socketUrl);
+  }, []);
+
+  const socket = socketRef.current;
 
   useEffect(() => {
     onLoad();
@@ -97,7 +107,7 @@ const Home = () => {
             <Login widths={width}></Login>
           </Route>
           <Route path="/register">
-            <Login widths={width}></Login>
+            {socket && <Login widths={width} socket={socket}></Login>}
           </Route>
         </Switch>
       </Router>

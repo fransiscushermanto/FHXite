@@ -26,7 +26,7 @@ const Navbar = ({ visible }) => {
   };
 
   const handleToolbar = () => {
-    if (!visible) {
+    if (visible) {
       return "mobile hide";
     } else if (open) {
       return "mobile show";
@@ -39,12 +39,10 @@ const Navbar = ({ visible }) => {
     <div className="header">
       <nav
         className={
-          !visible
-            ? "stickyNav-active fixed-top navbar-light"
-            : "stickyNav-hide"
+          visible ? "stickyNav-active fixed-top navbar-light" : "stickyNav-hide"
         }
       >
-        <a className={!visible ? "nav-logo" : "hide"} href="/">
+        <a className={visible ? "nav-logo" : "hide"} href="/">
           F<span>X</span>
         </a>
         <button
@@ -58,7 +56,7 @@ const Navbar = ({ visible }) => {
           <span></span>
         </button>
         <div id="desktop">
-          <ul className={!visible ? "desktop-nav-list-item" : "hide"}>
+          <ul className={visible ? "desktop-nav-list-item" : "hide"}>
             {CallNavList()}
           </ul>
         </div>

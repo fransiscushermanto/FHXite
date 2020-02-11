@@ -10,7 +10,7 @@
 
 #footer .left {
   position: relative;
-  left: 10%;
+  margin-right: auto;
 }
 
 #footer .left #footer-text {
@@ -40,7 +40,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  left: 65%;
+  margin-left: auto;
 }
 
 #footer #social-media-wrapper a.sosmed {

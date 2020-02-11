@@ -70,8 +70,8 @@ io.on("connection", function(socket) {
   socket.on("disconnect", function() {
     console.log("user disconnected");
   });
-  socket.on("ADD_SUBS", function() {
-    io.emit("LOAD_SUBS");
+  socket.on("ADD_USERS", function() {
+    io.emit("LOAD_USERS");
   });
 });
 http.listen(port, "0.0.0.0", () => {
