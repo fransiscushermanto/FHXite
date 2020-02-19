@@ -15,7 +15,6 @@ const Footer = ({ onHover, imageNoColor, imageColor, image }) => {
             <span className="logo-F">F</span>H<span className="logo-X">X</span>
             ite
           </div>
-          <strong>© 2019</strong>
         </div>
       </div>
       <div id="social-media-wrapper">
