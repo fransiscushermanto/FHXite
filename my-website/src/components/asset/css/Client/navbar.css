@@ -1,5 +1,5 @@
 .myNav {
-  position: absolute;
+  position: relative;
   display: flex;
   z-index: 2;
   top: 5%;
@@ -49,14 +49,14 @@
 }
 
 .nav-logo {
-  position: relative;
   align-self: flex-start;
-  left: 10%;
   color: white !important;
   text-decoration: none !important;
   font-size: 50px;
   font-weight: 500;
   filter: drop-shadow(4px 4px 1px rgba(11, 79, 124, 0.9));
+  position: relative;
+  left: 10%;
 }
 
 .nav-logo span {
@@ -70,7 +70,7 @@
 #desktop {
   width: 30%;
   position: relative;
-  right: 5%;
+  right: 8%;
 }
 
 #desktop .desktop-nav-list-item {

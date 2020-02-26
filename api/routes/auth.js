@@ -1,80 +1,41 @@
-var router = require("express").Router();
-const User = require("../models/user_model");
-const {
-  registerValidation,
-  loginValidation
-} = require("../middlewares/validation");
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
+var express = require("express");
+const router = require("express-promise-router")();
 const passport = require("passport");
-const verify = require("../middlewares/verifytoken");
+const passportConfig = require("../passport");
 
-router.post("/auth/tes", async (req, res, next) => {
-  res.status(200).send({ message: "welcome" });
+const { validateBody, schemas } = require("../helpers/routeHelpers");
+const UsersController = require("../controller/users");
+const passportSignIn = passport.authenticate("signin", { session: false });
+const passportJWT = passport.authenticate("jwt", { session: false });
+const passportGoogle = passport.authenticate("googleToken", { session: false });
+const passportFacebook = passport.authenticate("facebookToken", {
+  session: false
 });
 
-router.get("/auth/get", async (req, res) => {
-  try {
-    const user = await User.findAll();
-    res.json({ user });
-  } catch (error) {
-    console.log(error);
-  }
-});
+router.route("/auth/get").get(UsersController.getUsers);
 
-router.post("/auth/delete", async (req, res) => {
-  const del = await User.destroy({
-    where: {
-      user_id: req.body.id
-    }
-  }).catch(err => console.error(err));
-  res.json(del);
-});
+router.route("/auth/delete").post(UsersController.deleteUser);
 
-router.post("/auth/register", async (req, res, next) => {
-  const { error } = registerValidation(req.body);
-  if (error) return res.status(401).send(error.details[0].message);
-  passport.authenticate("register", async (err, user, info) => {
-    if (err) {
-      console.log(err);
-    }
-    if (info != undefined) {
-      res.send(info.message);
-    } else {
-      try {
-        req.logIn(user, async err => {
-          if (err) {
-            console.log(err);
-          }
-          res.status(200).json({ message: "user created" });
-        });
-        next();
-      } catch (error) {
-        console.log(error);
-      }
-    }
-  })(req, res, next);
-});
+router
+  .route("/auth/register")
+  .post(validateBody(schemas.registerSchema), UsersController.signUp);
 
-router.post("/auth/login", async (req, res, next) => {
-  const { error } = loginValidation(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
-  passport.authenticate("login", async (err, user, info) => {
-    if (err) {
-      console.log(err);
-    }
+router
+  .route("/auth/login")
+  .post(
+    validateBody(schemas.loginSchema),
+    passportSignIn,
+    UsersController.signIn
+  );
 
-    if (info != undefined) {
-      res.send(info.message);
-    } else {
-      req.logIn(user, async err => {
-        if (err) {
-          console.log(err);
-        }
-        res.status(200).json({ message: "user logged in", user });
-      });
-    }
-  })(req, res, next);
-});
+router
+  .route("/auth/oauth/google")
+  .post(passportGoogle, UsersController.googleOAuth);
+
+router
+  .route("/auth/oauth/facebook")
+  .post(passportFacebook, UsersController.facebookOAuth);
+
+router.route("/auth/secret").get(passportJWT, UsersController.secret);
 
 module.exports = router;

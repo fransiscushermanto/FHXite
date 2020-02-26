@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import instance from "../../../../instance";
 const Login = ({ displayLogin, changeLayout, inputTransition, widths }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const history = useHistory();
   const emails = value => {
     const mEmail = document.getElementById(value.target.id).value;
     setEmail(mEmail);
@@ -26,7 +27,7 @@ const Login = ({ displayLogin, changeLayout, inputTransition, widths }) => {
       const response = await instance.post("/api/user/auth/login", user);
       console.log(response);
       if (response.status === 200) {
-        document.querySelector("input").value = "";
+        // window.location.replace(window.location.origin);
       }
     } catch (error) {
       console.log(error);

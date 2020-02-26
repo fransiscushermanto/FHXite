@@ -57,13 +57,17 @@ passport.use(
   "login",
   new localStrategy(localOptions, async (req, username, password, done) => {
     try {
-      console.log("TOUCH PASSPORT");
       const user = await User.findAndCountAll({
         where: {
           email: username,
           status: "on"
         }
       });
+      console.log(user.rows.length);
+      if (user.rows.length == 0) {
+        console.log("tes");
+        return done(null, false, { message: "User not found!" });
+      }
 
       const result = user.rows[0];
       const exist = user.count > 0 ? true : false;
@@ -72,16 +76,15 @@ passport.use(
         return done(null, false, { message: "Email or password is invalid" });
       const validPass = await bcrypt.compare(password, result.password);
       if (!validPass) return done(null, false, { message: "Invalid Password" });
-      console.log("user logged in");
       return done(null, result);
     } catch (error) {
-      done(error);
+      return done(error);
     }
   })
 );
 
 const opts = {
-  jwtFromRequest: ExtractJWT.fromAuthHeaderWithScheme("JWT"),
+  jwtFromRequest: ExtractJWT.fromHeader("JWT"),
   secretOrKey: process.env.TOKEN_SECRET
 };
 

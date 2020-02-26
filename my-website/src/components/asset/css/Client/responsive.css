@@ -4,6 +4,15 @@
   .navbar-toggler {
     display: none !important;
   }
+}
+
+@media all and (max-width: 1400px) and (min-width: 1200px) {
+  #main #welcome-jumbotron .container {
+    padding: 0px 50px;
+  }
+  .navbar-toggler {
+    display: none !important;
+  }
   /* #footer #social-media-wrapper {
     left: 60%;
   } */
@@ -12,6 +21,9 @@
 @media all and (max-width: 1200px) and (min-width: 1151px) {
   .navbar-toggler {
     display: none !important;
+  }
+  #main #welcome-jumbotron .container {
+    padding: 0px 50px;
   }
 
   #main #welcome-jumbotron .container #title {
@@ -44,6 +56,10 @@
 }
 
 @media all and (max-width: 1150px) and (min-width: 900px) {
+  #main #welcome-jumbotron .container {
+    padding: 0px 30px;
+  }
+
   #main #welcome-jumbotron .container #title {
     font-size: 60px;
     width: 100%;
@@ -487,6 +503,10 @@
     display: none;
   }
 
+  #main #welcome-jumbotron .container {
+    padding: 0px 50px;
+  }
+
   #main #welcome-jumbotron .container #title {
     font-size: 55px;
     width: 100%;
@@ -600,7 +620,11 @@
   }
 
   .nav-logo {
-    left: 3%;
+    left: 9%;
+  }
+
+  #main #welcome-jumbotron .container {
+    padding: 0px 50px;
   }
 
   #main #welcome-jumbotron .container #title {
@@ -701,10 +725,6 @@
 @media all and (max-width: 500px) and (min-width: 200px) {
   #desktop {
     display: none;
-  }
-
-  .nav-logo {
-    left: 3%;
   }
 
   #main #welcome-jumbotron .container #title {

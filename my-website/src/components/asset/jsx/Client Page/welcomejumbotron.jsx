@@ -14,7 +14,7 @@ const WelcomeJumbotron = ({ visible }) => {
           websites.
         </h3>
         <div id="wrap-btn">
-          <button className="explore">
+          <a href="/playground" className="explore">
             <p>Let's find out</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@ const WelcomeJumbotron = ({ visible }) => {
             >
               <path id="arrow" d="M16 7.328v-3.328l8 8-8 8v-3.328l-16-4.672z" />
             </svg>
-          </button>
+          </a>
         </div>
         <div id="image-illustration">
           <img

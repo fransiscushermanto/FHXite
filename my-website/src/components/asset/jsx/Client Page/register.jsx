@@ -46,12 +46,11 @@ const Register = ({
       country: country
     };
     try {
-      const response = await instance.post("/api/user/auth/register", user);
+      const response = await instance.post("/api/users/auth/register", user);
       socket.emit("ADD_USERS");
       if (response.status === 200) {
         document.querySelector("input").value = "";
         history.push("/login");
-        window.location.reload();
       }
     } catch (error) {
       console.log(error);

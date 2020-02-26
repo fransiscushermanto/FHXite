@@ -32,6 +32,24 @@ const Login = ({ widths, socket }) => {
     LoadPage();
   }, [wrapperBackground]);
 
+  const LoadPage = () => {
+    if (window.location.pathname === "/login") {
+      setRegister(false);
+      setLogin(true);
+    } else {
+      setRegister(true);
+      setLogin(false);
+    }
+    const wrapper = document.getElementsByClassName("user-wrapper");
+    wrapperBackground.map(bg => {
+      const { pathname, background } = bg;
+      if (window.location.pathname === pathname) {
+        wrapper[0].style.background = `${background}`;
+      }
+      return bg;
+    });
+  };
+
   const inputTransition = e => {
     const field = [
       { target: "email", pos: "0", pathname: "/login" },
@@ -107,6 +125,10 @@ const Login = ({ widths, socket }) => {
         />
       );
     }
+  };
+
+  window.onpopstate = e => {
+    LoadPage();
   };
 
   return (

@@ -1,8 +1,6 @@
-var router = require("express").Router();
-const verify = require("../middlewares/verifytoken");
-const User = require("../models/user_model");
+const router = require("express-promise-router")();
 
-router.get("/", verify, (req, res) => {
-  res.send(req.user);
+router.post("/", (req, res) => {
+  res.json(req.body);
 });
 module.exports = router;
