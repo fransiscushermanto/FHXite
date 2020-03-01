@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import io from "socket.io-client";
-
-import Main from "../jsx/Client Page/main";
-import Loader from "../jsx/Client Page/loader";
-import Admin from "../jsx/Admin Page/Admin";
-import Login from "../jsx/Client Page/login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import Main from "./Client Page/Main";
+import Loader from "./Client Page/Loader";
+import Admin from "../jsx/Admin Page/Admin";
+import Login from "./Client Page/Login";
+import "../css/Client/jumbotron.css";
 
 const Home = () => {
   const [image, setImage] = useState([
@@ -89,28 +90,26 @@ const Home = () => {
   return (
     <React.Fragment>
       <Loader widths={width}></Loader>
-      <Router forceRefresh={false}>
-        <Switch>
-          <Route exact path="/">
-            <Main
-              widths={width}
-              onHover={onHover}
-              imageNoColor={no_color_img}
-              imageColor={color_img}
-              image={image}
-            ></Main>
-          </Route>
-          <Route path="/admin">
-            <Admin widths={width}></Admin>
-          </Route>
-          <Route path="/login">
-            <Login widths={width}></Login>
-          </Route>
-          <Route path="/register">
-            {socket && <Login widths={width} socket={socket}></Login>}
-          </Route>
-        </Switch>
-      </Router>
+      <Switch>
+        <Route exact path="/">
+          <Main
+            widths={width}
+            onHover={onHover}
+            imageNoColor={no_color_img}
+            imageColor={color_img}
+            image={image}
+          ></Main>
+        </Route>
+        <Route exact path="/admin">
+          <Admin widths={width}></Admin>
+        </Route>
+        <Route exact path="/login">
+          <Login widths={width}></Login>
+        </Route>
+        <Route exact path="/register">
+          {socket && <Login widths={width} socket={socket}></Login>}
+        </Route>
+      </Switch>
     </React.Fragment>
   );
 };

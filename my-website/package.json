@@ -18,8 +18,12 @@
     "react-dom": "^16.12.0",
     "react-phone-input-2": "^2.11.0",
     "react-phone-number-input": "^2.5.1",
+    "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
+    "redux": "^4.0.5",
+    "redux-form": "^8.3.0",
+    "redux-thunk": "^2.3.0",
     "socket.io-client": "^2.3.0",
     "velocity": "^0.7.2",
     "velocity-animate": "^1.5.2"

@@ -22,7 +22,7 @@ import {
 import { amber, green } from "@material-ui/core/colors";
 
 const Admin = ({ widths }) => {
-  let { url } = useRouteMatch();
+  let { path, url } = useRouteMatch();
   const socketRef = React.useRef();
   useEffect(() => {
     const socketUrl = `${process.env.REACT_APP_SOCKET_URL ||
@@ -173,19 +173,29 @@ const Admin = ({ widths }) => {
     );
   };
 
+  const Tes = () => {
+    return (
+      <div>
+        <h1></h1>
+      </div>
+    );
+  };
+
   return (
     <div className="wrapper" style={{ zIndex: widths === 100 ? "3" : "0" }}>
       <Navbar navList={navList} RenderNavList={RenderNavList}></Navbar>
+
       <div
         className="control-wrapper"
         style={{ zIndex: widths === 100 ? "3" : "0" }}
       >
         <Switch>
-          <Route path={`${url}/user`}>
+          <Route exact path={`${path}/user`}>
             {socket && <User socket={socket} handleClick={handleClick}></User>}
           </Route>
         </Switch>
       </div>
+
       <RenderMySnackBar />
     </div>
   );

@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import SocialMedia from "./socialmedia";
+import "../../css/Client/footer.css";
+import SocialMedia from "./SocialMedia";
 const Footer = ({ onHover, imageNoColor, imageColor, image }) => {
   return (
     <div id="footer">

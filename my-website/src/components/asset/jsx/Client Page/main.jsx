@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 
-import WelcomeJumbotron from "./welcomejumbotron";
-import Introduce from "./introduce";
-import ToolsJumbotron from "./toolsjumbotron";
-import StarRating from "./starRating";
-import Footer from "./footer";
+import WelcomeJumbotron from "./WelcomeJumbotron";
+import Introduce from "./Introduce";
+import ToolsJumbotron from "./ToolsJumbotron";
+import StarRating from "./StarRating";
+import Footer from "./Footer";
 import "../../js/animate.js";
+import "../../css/Client/main.css";
 
 const Main = ({ widths, imageNoColor, imageColor, image, onHover }) => {
   const img = [

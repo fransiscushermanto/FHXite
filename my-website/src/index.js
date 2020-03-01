@@ -1,21 +1,37 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./components/asset/css/Client/loader.css";
-import "./components/asset/css/Client/navbar.css";
-import "./components/asset/css/Client/style.css";
-import "./components/asset/css/Client/movingStar.css";
-import "./components/asset/css/Client/jumbotron.css";
-import "./components/asset/css/Client/footer.css";
-import "./components/asset/css/Client/about.css";
-import "./components/asset/css/Client/main.css";
-import "./components/asset/css/Client/responsive.css";
-import "./components/asset/js/animate.js";
+import { BrowserRouter as Router } from "react-router-dom";
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import reduxThunk from "redux-thunk";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import App from "./components/asset/App";
+import reducers from "./reducers";
+import * as serviceWorker from "./serviceWorker";
+import "./components/asset/css/Client/style.css";
+import "./components/asset/css/Client/responsive.css";
+
+const jwtToken = localStorage.getItem("JWT_TOKEN");
+
+ReactDOM.render(
+  <Provider
+    store={createStore(
+      reducers,
+      {
+        auth: {
+          token: jwtToken,
+          isAuthenticated: jwtToken ? true : false
+        }
+      },
+      applyMiddleware(reduxThunk)
+    )}
+  >
+    <Router>
+      <App></App>
+    </Router>
+  </Provider>,
+  document.getElementById("root")
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

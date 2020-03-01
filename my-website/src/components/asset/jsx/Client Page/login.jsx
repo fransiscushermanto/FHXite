@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Register from "../Client Page/register";
-import LoginPage from "../Client Page/loginpage";
+import Register from "./Register";
+import LoginPage from "./LoginPage";
 import "../../css/Client/login.css";
 
 const Login = ({ widths, socket }) => {

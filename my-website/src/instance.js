@@ -5,7 +5,8 @@ var instance = axios.create({
   header: {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-  }
+  },
+  simple: false
 });
 
 export default instance;

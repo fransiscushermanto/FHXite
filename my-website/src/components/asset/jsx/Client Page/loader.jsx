@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
+import "../../css/Client/loader.css";
 const Loader = ({ widths }) => {
   const getStroke = () => {
     document.querySelectorAll("#logo #Text path");

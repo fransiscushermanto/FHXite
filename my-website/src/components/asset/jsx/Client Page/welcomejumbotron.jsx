@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Navbar from "./navbar";
-
+import Navbar from "./Navbar";
+import User from "../Admin Page/User";
+import "../../js/animate.js";
 const WelcomeJumbotron = ({ visible }) => {
   return (
     <div id="welcome-jumbotron" className="jumbotron-div">

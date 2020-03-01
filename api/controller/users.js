@@ -22,12 +22,11 @@ module.exports = {
       phone_number,
       country
     } = req.value.body;
-
     const exist = await User.findOne({ "local.email": email });
     if (exist) {
       return res.status(403).send({ error: "Email already exist" });
     }
-
+    console.log(exist);
     const newUser = new User({
       method: "local",
       local: {
